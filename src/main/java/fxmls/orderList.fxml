@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #162e46;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OrderList">
+   <center>
+      <TableView fx:id="mainView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="orderNum" prefWidth="116.0" text="Nr Zamówienia" />
+          <TableColumn fx:id="price" prefWidth="117.0" text="Cena" />
+            <TableColumn fx:id="customer" prefWidth="181.0" text="Klient" />
+            <TableColumn fx:id="adress" prefWidth="131.0" text="Miejsce dostawy" />
+            <TableColumn fx:id="phoneNum" prefWidth="106.0" text="Nr tel" />
+            <TableColumn fx:id="delTime" prefWidth="148.0" text="Dzień dostawy" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#editOrder" text="Edytuj" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteRow" text="Usuń" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </center>
+   <top>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView accessibleRole="BUTTON" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <TextField alignment="CENTER" maxWidth="250.0" promptText="Wyszukaj" />
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+           <children>
+                 <ImageView accessibleRole="BUTTON" fitHeight="100.0" fitWidth="412.0" onMouseClicked="#openOrderAddWindow" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                         <Image url="@../images/addOrder.png" />
+                     </image>
+                 </ImageView>
+           </children>
+       </VBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

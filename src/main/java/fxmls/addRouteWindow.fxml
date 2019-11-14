@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #162e46;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddRouteWindow">
+   <center>
+      <VBox prefHeight="585.0" prefWidth="754.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <ListView fx:id="newRoute" prefHeight="252.0" prefWidth="465.0">
+                     <HBox.margin>
+                        <Insets left="40.0" right="50.0" />
+                     </HBox.margin></ListView>
+               </children>
+            </HBox>
+            <Pane prefHeight="181.0" prefWidth="754.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Auto" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Kierowca" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="3.0">
+                     <children>
+                        <TextField fx:id="truck" />
+                        <TextField fx:id="driver" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Godzina" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Dzień" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="3.0">
+                     <children>
+                        <TextField fx:id="hour" />
+                        <TextField fx:id="day" />
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children></VBox>
+   </center>
+   <top>
+      <Label text="Nowa Trasa" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="46.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="30.0" top="30.0" />
+         </BorderPane.margin></Label>
+   </top>
+   <bottom>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="ready" mnemonicParsing="false" onAction="#gotowe" style="-fx-background-color: #162e46;" text="Gotowe" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </bottom>
+   <right>
+      <ListView fx:id="allOrderList" prefHeight="546.0" prefWidth="308.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="140.0" />
+         </BorderPane.margin>
+      </ListView>
+   </right>
+</BorderPane>
