@@ -1,6 +1,5 @@
 package app;
 
-import entities.OrderIDGenerator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL url = new File("src/main/java/fxmls/sample.fxml").toURI().toURL();
+        URL url = new File("src/main/java/fxmls/mainMenu.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         primaryStage.setTitle("Menu Główne");
         primaryStage.setScene(new Scene(root, 1200, 900));

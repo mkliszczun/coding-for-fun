@@ -3,8 +3,8 @@ package entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "stal")
-public class Stal implements TableListable {
+@Table(name = "steel")
+public class Steel implements TableListable {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)

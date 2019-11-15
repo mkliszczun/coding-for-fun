@@ -1,9 +1,9 @@
 package util;
 
 import entities.Order;
-import entities.Pret;
+import entities.Bar;
 import entities.Route;
-import entities.Stal;
+import entities.Steel;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -30,20 +30,16 @@ public class HibernateUtil {
                 settings.put(Environment.HBM2DDL_AUTO, "validate");
 
                 configuration.setProperties(settings);
-                configuration.addAnnotatedClass(Pret.class);
-                configuration.addAnnotatedClass(Stal.class);
+                configuration.addAnnotatedClass(Bar.class);
+                configuration.addAnnotatedClass(Steel.class);
                 configuration.addAnnotatedClass(Order.class);
                 configuration.addAnnotatedClass(Route.class);
-
-
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
 
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
                 return sessionFactory;
-
-
 
             } catch (Exception e) {
                 e.printStackTrace();

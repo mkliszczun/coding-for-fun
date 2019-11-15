@@ -39,9 +39,9 @@ public class OrderAddWindow {
     Label orderNumLabel;
 
 
-    private List<Stal> stalList;
+    private List<Steel> steelList;
     private ObservableList<TableListable> itemsForTable;
-    private List<Pret> pretList;
+    private List<Bar> barList;
     private String orderNum;
     private int orderId;
     private OrderList parentWindow;
@@ -49,11 +49,11 @@ public class OrderAddWindow {
 
     @FXML
     public void initialize() {
-        OrderIDGenerator idGenerator = new OrderIDGenerator();
+        OrderNumGenerator idGenerator = new OrderNumGenerator();
         orderNum = idGenerator.generate();
-        stalList = new ArrayList<>();
+        steelList = new ArrayList<>();
         itemsForTable = FXCollections.observableArrayList();
-        pretList = new ArrayList<>();
+        barList = new ArrayList<>();
         orderNumLabel.setText("Nr zamówienia " + orderNum);
         orderTable.setItems(itemsForTable);
     }
@@ -69,8 +69,8 @@ public class OrderAddWindow {
         order.setAdres(adres.getText());
         order.setNip(nip.getText());
         order.setAddInfo(addInfo.getText());
-        order.setStalList(stalList);
-        order.setPretList(pretList);
+        order.setSteelList(steelList);
+        order.setBarList(barList);
         return order;
     }
 
@@ -109,15 +109,15 @@ public class OrderAddWindow {
     }
 
 
-    public void addSteelToList(Stal stal) {
-        stalList.add(stal);
-        itemsForTable.add(stal);
+    public void addSteelToList(Steel steel) {
+        steelList.add(steel);
+        itemsForTable.add(steel);
 
     }
 
-    public void addPretToList(Pret pret){
-        pretList.add(pret);
-        itemsForTable.add(pret);
+    public void addPretToList(Bar bar){
+        barList.add(bar);
+        itemsForTable.add(bar);
     }
 
     public void setOrderToEdit(Order order){
@@ -130,11 +130,11 @@ public class OrderAddWindow {
         nip.setText(order.getNip());
         addInfo.setText(order.getAddInfo());
         orderNumLabel.setText(String.valueOf(order.getOrderNum()));
-        stalList = order.getStalList();
-        pretList = order.getPretList();
+        steelList = order.getSteelList();
+        barList = order.getBarList();
 
-        itemsForTable.addAll(order.getStalList());
-        itemsForTable.addAll(order.getPretList());
+        itemsForTable.addAll(order.getSteelList());
+        itemsForTable.addAll(order.getBarList());
     }
 
 
@@ -147,26 +147,26 @@ public class OrderAddWindow {
         int selectedIndex = orderTable.getSelectionModel().getSelectedIndex();
         String path = null;
         if(selectedIndex >= 0)
-            if (orderTable.getItems().get(selectedIndex).getClass() == Stal.class){
+            if (orderTable.getItems().get(selectedIndex).getClass() == Steel.class){
 
-                Stal stal = (Stal) orderTable.getItems().get(selectedIndex);
+                Steel steel = (Steel) orderTable.getItems().get(selectedIndex);
                 URL url = new File("src/main/java/fxmls/addSteelWindow.fxml").toURI().toURL();
                 FXMLLoader loader = new FXMLLoader(url);
                 Parent root = loader.load();
                 AddSteelWindow addSteelWindow = loader.getController();
-                addSteelWindow.setStalToEdit(stal, this, selectedIndex);
+                addSteelWindow.setStalToEdit(steel, this, selectedIndex);
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.show();
 
-            } else if (orderTable.getItems().get(selectedIndex).getClass() == Pret.class){
+            } else if (orderTable.getItems().get(selectedIndex).getClass() == Bar.class){
 
-                Pret pret = (Pret) orderTable.getItems().get(selectedIndex);
+                Bar bar = (Bar) orderTable.getItems().get(selectedIndex);
                 URL url = new File("src/main/java/fxmls/addPretWindow.fxml").toURI().toURL();
                 FXMLLoader loader = new FXMLLoader(url);
                 Parent root = loader.load();
                 AddPretWindow addPretWindow = loader.getController();
-                addPretWindow.setPretToEdit(pret,this, selectedIndex);
+                addPretWindow.setPretToEdit(bar,this, selectedIndex);
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.show();
@@ -176,14 +176,14 @@ public class OrderAddWindow {
 
     public void deleteItem(int selectedIndex){
         if (selectedIndex >= 0){
-            if (itemsForTable.get(selectedIndex).getClass() == Stal.class){
-                Stal itemToDelete = (Stal) itemsForTable.get(selectedIndex);
-                stalList.remove(itemToDelete);
+            if (itemsForTable.get(selectedIndex).getClass() == Steel.class){
+                Steel itemToDelete = (Steel) itemsForTable.get(selectedIndex);
+                steelList.remove(itemToDelete);
 
             }
-            else if (itemsForTable.get(selectedIndex).getClass() == Pret.class){
-                Pret itemToDelete = (Pret) itemsForTable.get(selectedIndex);
-                pretList.remove(itemToDelete);
+            else if (itemsForTable.get(selectedIndex).getClass() == Bar.class){
+                Bar itemToDelete = (Bar) itemsForTable.get(selectedIndex);
+                barList.remove(itemToDelete);
             }
             itemsForTable.remove(selectedIndex);
             orderTable.refresh();

@@ -3,8 +3,8 @@ package entities;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "pret")
-public class Pret implements TableListable {
+@Table (name = "bar")
+public class Bar implements TableListable {
     @Id
     @Column (name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,8 +13,8 @@ public class Pret implements TableListable {
     private int d;
     @Column(name = "length")
     private float length;
-    @Column (name = "zebro")
-    private boolean zebro;
+    @Column (name = "ribbed")
+    private boolean ribbed;
     @Column (name = "count")
     private int count;
     @Column (name = "add_info")
@@ -22,8 +22,8 @@ public class Pret implements TableListable {
 
 
 
-    public Pret(){
-        this.zebro = true;
+    public Bar(){
+        this.ribbed = true;
     }
 
     public int getD() {
@@ -42,12 +42,12 @@ public class Pret implements TableListable {
         this.length = length;
     }
 
-    public boolean isZebro() {
-        return zebro;
+    public boolean isRibbed() {
+        return ribbed;
     }
 
-    public void setZebro(boolean zebro) {
-        this.zebro = zebro;
+    public void setRibbed(boolean ribbed) {
+        this.ribbed = ribbed;
     }
 
     public int getCount() {
@@ -80,7 +80,7 @@ public class Pret implements TableListable {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append(d);
-        if (zebro){
+        if (ribbed){
             string.append(" żebro           ");
         } else {
             string.append(" gładki         ");

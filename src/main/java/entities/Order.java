@@ -33,15 +33,15 @@ public class Order implements TableListable, Serializable {
     private int routeId;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.SUBSELECT)
-    private List<Stal> stalList;
+    private List<Steel> steelList;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.SUBSELECT)
-    private List<Pret> pretList;
+    private List<Bar> barList;
 
 
     public Order(){
-        this.stalList = new ArrayList<>();
-        this.pretList = new ArrayList<>();
+        this.steelList = new ArrayList<>();
+        this.barList = new ArrayList<>();
     }
 
 
@@ -105,20 +105,20 @@ public class Order implements TableListable, Serializable {
         return addInfo;
     }
 
-    public List<Stal> getStalList() {
-        return stalList;
+    public List<Steel> getSteelList() {
+        return steelList;
     }
 
-    public void setStalList(List<Stal> stalList) {
-        this.stalList = stalList;
+    public void setSteelList(List<Steel> steelList) {
+        this.steelList = steelList;
     }
 
-    public List<Pret> getPretList() {
-        return pretList;
+    public List<Bar> getBarList() {
+        return barList;
     }
 
-    public void setPretList(List<Pret> pretList) {
-        this.pretList = pretList;
+    public void setBarList(List<Bar> barList) {
+        this.barList = barList;
     }
 
     public void setAddInfo(String addInfo) {
@@ -135,7 +135,7 @@ public class Order implements TableListable, Serializable {
 
     @Override
     public String toString(){
-        return orderNum + " id"; // + " " + adres;
+        return orderNum + " " + adres;
 
     }
 }

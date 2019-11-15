@@ -77,7 +77,7 @@ public class OrderList {
 }
 
     public void home(MouseEvent event) throws IOException {
-        swapScene(event, "src/main/java/fxmls/sample.fxml");
+        swapScene(event, "src/main/java/fxmls/mainMenu.fxml");
     }
 
     public void openOrderAddWindow() throws IOException{

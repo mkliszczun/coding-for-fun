@@ -18,7 +18,7 @@ public class History {
     public void home(MouseEvent event) throws IOException {
         Stage appStage;
         Parent root;
-        URL url = new File("src/main/java/fxmls/sample.fxml").toURI().toURL();
+        URL url = new File("src/main/java/fxmls/mainMenu.fxml").toURI().toURL();
 
         appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         root = FXMLLoader.load(url);

@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class OrderIDGenerator {
+public class OrderNumGenerator {
 
 
     public String generate() {

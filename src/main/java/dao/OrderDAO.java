@@ -1,9 +1,9 @@
 package dao;
 
 
+import entities.Bar;
 import entities.Order;
-import entities.Pret;
-import entities.Stal;
+import entities.Steel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
@@ -21,12 +21,12 @@ public class OrderDAO {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
 
-            for (Stal stal : order.getStalList()){
-                session.save(stal);
+            for (Steel steel : order.getSteelList()){
+                session.save(steel);
             }
 
-            for (Pret pret : order.getPretList()){
-                session.save(pret);
+            for (Bar bar : order.getBarList()){
+                session.save(bar);
             }
 
             session.save(order);

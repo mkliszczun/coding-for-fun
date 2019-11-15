@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class Controller {
+public class MainMenu {
 
     static {
 //        creates sessionFactory at the beginning, to avoid loading while opening orderList, or Routes
@@ -48,7 +48,7 @@ public class Controller {
     }
 
     public void home(MouseEvent event) throws IOException {
-        swapScene(event, "src/main/java/fxmls/sample.fxml");
+        swapScene(event, "src/main/java/fxmls/mainMenu.fxml");
     }
 
     public void history(MouseEvent event) throws IOException {

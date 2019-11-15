@@ -1,37 +1,18 @@
 package dao;
 
-import entities.Pret;
+import entities.Steel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
-public class PretDAO {
-    public void savePret(Pret pret){
+public class SteelDAO {
+    public void saveStal(Steel steel){
         Transaction transaction = null;
 
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
 
-            session.save(pret);
-
-            transaction.commit();
-
-        } catch (Exception e){
-            if (transaction != null){
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
-
-    public Pret readPret(int id){
-        Pret pret = null;
-        Transaction transaction = null;
-
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            transaction = session.beginTransaction();
-
-            pret = session.get(Pret.class, id);
+            session.save(steel);
 
             transaction.commit();
 
@@ -42,19 +23,41 @@ public class PretDAO {
             }
             e.printStackTrace();
         }
-
-        return pret;
     }
 
-    public void deletePret(Pret pret){
+    public Steel readStal(int id){
+        Steel steel = null;
         Transaction transaction = null;
 
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
 
-            session.delete(pret);
+            steel = session.get(Steel.class, id);
+
 
             transaction.commit();
+
+
+        } catch (Exception e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+
+        return steel;
+    }
+
+    public void deleteStal(Steel steel){
+        Transaction transaction = null;
+
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+
+            session.delete(steel);
+
+            transaction.commit();
+
 
         } catch (Exception e){
             if (transaction != null){
@@ -63,6 +66,4 @@ public class PretDAO {
             e.printStackTrace();
         }
     }
-
-
 }

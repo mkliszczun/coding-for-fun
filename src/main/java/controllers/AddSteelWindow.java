@@ -1,6 +1,6 @@
 package controllers;
 
-import entities.Stal;
+import entities.Steel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -30,24 +30,24 @@ public class AddSteelWindow {
     private boolean edited = false;
     private int selectedIndex;
 
-    private Stal createStal(){
+    private Steel createStal(){
         try{
-            Stal stal = new Stal();
+            Steel steel = new Steel();
 
-            stal.setHeigh(Float.parseFloat(height.getText()));
-            stal.setWidth(Float.parseFloat(width.getText()));
-            stal.setThick(Float.parseFloat(thick.getText()));
-            stal.setLengthCM(Float.parseFloat(length.getText()));
-            stal.setCount(Integer.parseInt(count.getText()));
-            stal.setTier(Integer.parseInt(tier.getText()));
+            steel.setHeigh(Float.parseFloat(height.getText()));
+            steel.setWidth(Float.parseFloat(width.getText()));
+            steel.setThick(Float.parseFloat(thick.getText()));
+            steel.setLengthCM(Float.parseFloat(length.getText()));
+            steel.setCount(Integer.parseInt(count.getText()));
+            steel.setTier(Integer.parseInt(tier.getText()));
             String adInf;
             if(addInfo.getText() != null) {
                 adInf = addInfo.getText();
             } else {
                 adInf = " ";
             }
-            stal.setAddInfo(adInf);
-            return stal;
+            steel.setAddInfo(adInf);
+            return steel;
 
         }catch (NumberFormatException e){
             return null;
@@ -57,26 +57,26 @@ public class AddSteelWindow {
 
 
     public void gotowe(ActionEvent event){
-        Stal stal = createStal();
-        if (stal != null){
+        Steel steel = createStal();
+        if (steel != null){
             if(edited){
                 parentWindow.deleteItem(selectedIndex);
             }
-            parentWindow.addSteelToList(stal);
+            parentWindow.addSteelToList(steel);
             Stage appStage;
             appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.close();
         }
     }
 
-    public void setStalToEdit(Stal stal, OrderAddWindow parentWindow, int selectedIndex){
-        height.setText(String.valueOf(stal.getHeigh()));
-        width.setText(String.valueOf(stal.getWidth()));
-        thick.setText(String.valueOf(stal.getThick()));
-        length.setText(String.valueOf(stal.getLengthCM()));
-        count.setText(String.valueOf(stal.getCount()));
-        tier.setText(String.valueOf(stal.getTier()));
-        addInfo.setText(stal.getAddInfo());
+    public void setStalToEdit(Steel steel, OrderAddWindow parentWindow, int selectedIndex){
+        height.setText(String.valueOf(steel.getHeigh()));
+        width.setText(String.valueOf(steel.getWidth()));
+        thick.setText(String.valueOf(steel.getThick()));
+        length.setText(String.valueOf(steel.getLengthCM()));
+        count.setText(String.valueOf(steel.getCount()));
+        tier.setText(String.valueOf(steel.getTier()));
+        addInfo.setText(steel.getAddInfo());
         edited = true;
         this.selectedIndex = selectedIndex;
         setParentWindow(parentWindow);
