@@ -17,7 +17,7 @@ import java.net.URL;
 public class Controller {
 
     static {
-//        creates sessionFactory at the beginning
+//        creates sessionFactory at the beginning, to avoid loading while opening orderList, or Routes
         HibernateUtil.getSessionFactory();
     }
 

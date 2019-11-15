@@ -15,9 +15,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.hibernate.SessionFactory;
-import util.HibernateUtil;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;

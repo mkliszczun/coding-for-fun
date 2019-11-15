@@ -44,7 +44,6 @@ public class Routes {
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         truck.setCellValueFactory(new PropertyValueFactory<>("truck"));
         driver.setCellValueFactory(new PropertyValueFactory<>("driver"));
-//        orderCount.setCellValueFactory(new PropertyValueFactory<>("orderCount"));
     }
 
     public void deleteRoute(ActionEvent event){

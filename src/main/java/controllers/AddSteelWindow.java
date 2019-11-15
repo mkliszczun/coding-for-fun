@@ -12,22 +12,16 @@ import javafx.stage.Stage;
 public class AddSteelWindow {
     @FXML
     TextField height;
-
     @FXML
     TextField width;
-
     @FXML
     TextField thick;
-
     @FXML
     TextField length;
-
     @FXML
     TextField count;
-
     @FXML
     TextField tier;
-
     @FXML
     TextArea addInfo;
 

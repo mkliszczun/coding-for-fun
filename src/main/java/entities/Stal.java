@@ -90,6 +90,7 @@ public class Stal implements TableListable {
         this.id = id;
     }
 
+    //    this method is overriden to be displayed in list views in clean way
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder();

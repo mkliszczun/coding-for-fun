@@ -70,10 +70,6 @@ public class AddRouteWindow {
         });
     }
 
-
-
-
-//    maybe to add edited option and custom id
     private Route createRoute(){
         Route route = null;
         try {
@@ -87,14 +83,10 @@ public class AddRouteWindow {
             }
             route.setOrderList(routeOrderList);
 
-        } catch (Exception e){
+        } catch (IllegalArgumentException e){
             e.printStackTrace();
             route = null;
         }
-//        for (Order order : route.getOrderList()) {
-//            order.setRouteId(route.getId());
-//        }
-
         return route;
         }
 
@@ -102,7 +94,6 @@ public class AddRouteWindow {
     public void gotowe(ActionEvent event){
         Route route = createRoute();
         if(route != null) {
-//            setRouteToOrders(route);
             RouteDAO routeDAO = new RouteDAO();
             routeDAO.saveOrUpdateRoute(route);
             parentWindow.addRoute(route);
@@ -114,8 +105,6 @@ public class AddRouteWindow {
 
     }
 
-
-
     public void setRouteToEdit(Route route){
         id = route.getId();
         System.out.println(id);
@@ -124,7 +113,6 @@ public class AddRouteWindow {
         hour.setText(route.getStartHr());
         day.setText(route.getDay());
         routeOrderList.addAll(route.getOrderList());
-
     }
 
     public void setParentWindow(Routes parentWindow){

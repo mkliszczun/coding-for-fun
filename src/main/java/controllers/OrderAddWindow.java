@@ -43,7 +43,6 @@ public class OrderAddWindow {
     private ObservableList<TableListable> itemsForTable;
     private List<Pret> pretList;
     private String orderNum;
-    private boolean edited = false;
     private int orderId;
     private OrderList parentWindow;
 
@@ -123,8 +122,6 @@ public class OrderAddWindow {
 
     public void setOrderToEdit(Order order){
         orderId = order.getId();
-        System.out.println(orderId);
-        edited = true;
         orderNum = order.getOrderNum();
         klientField.setText(order.getCustomer());
         nrTele.setText(order.getPhonNum());

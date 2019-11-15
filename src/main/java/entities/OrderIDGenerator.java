@@ -38,53 +38,6 @@ public class OrderIDGenerator {
         return null;
     }
 
-//    public Serializable generate()
-//            throws HibernateException {
-//
-//        String prefix = generatePrefix();
-//        Serializable result = null;
-//        Connection connection = null;
-////        Statement statement = null;
-//        String generatedId;
-//
-//
-//        try (Session session = HibernateUtil.getSessionFactory().openSession()){
-//
-//            session.doWork(new Work() {
-//                @Override
-//                public void execute(Connection connection) throws SQLException {
-//                    Statement statement = connection.createStatement();
-//                    ResultSet rs = statement.executeQuery("SELECT last_num FROM order_id_generator");
-//                    int lastNum = rs.getInt(1);
-//
-//                    if (statement.execute
-//                            ("update order_id_generator set last_num = " + (++lastNum))) {
-//                        generatedId = prefix + lastNum;
-//                        return generatedId;
-//                    }                }
-//            });
-//
-//
-////            statement = connection.createStatement();
-////            ResultSet rs = statement.executeQuery("SELECT last_num FROM order_id_generator");
-////            int lastNum = rs.getInt(1);
-////
-////            if (statement.execute
-////                    ("update order_id_generator set last_num = " + (++lastNum))) {
-////                String generatedId = prefix + lastNum;
-////                return generatedId;
-////            }
-//            String generatedId = prefix + lastNum;
-//            return generatedId;
-//
-//        } catch (SQLException e){
-//            e.printStackTrace();
-//        }
-//
-//
-//
-//        return null;
-//    }
 
     public static String generatePrefix(){
         StringBuilder id = new StringBuilder();

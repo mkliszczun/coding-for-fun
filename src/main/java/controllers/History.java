@@ -11,6 +11,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+
+// under construction
+
 public class History {
     public void home(MouseEvent event) throws IOException {
         Stage appStage;
@@ -19,7 +22,6 @@ public class History {
 
         appStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         root = FXMLLoader.load(url);
-//        root = FXMLLoader.load(getClass().getResource(path));
         Scene scene = new Scene(root);
         appStage.setScene(scene);
         appStage.show();
