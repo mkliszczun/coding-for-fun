@@ -86,26 +86,6 @@ public class RouteDAO {
 
     }
 
-    public Route getRoute(int id){
-        Route route= null;
-        Transaction transaction = null;
-
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            transaction = session.beginTransaction();
-
-            route = session.get(Route.class, id);
-
-            transaction.commit();
-
-
-        } catch (Exception e){
-            if (transaction != null){
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-        return route;
-    }
 
     public Route getRouteWithOrders(int id){
         Route route = null;

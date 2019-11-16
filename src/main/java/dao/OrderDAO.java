@@ -1,9 +1,7 @@
 package dao;
 
 
-import entities.Bar;
 import entities.Order;
-import entities.Steel;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
@@ -15,32 +13,6 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class OrderDAO {
-    public void saveOrder(Order order){
-        Transaction transaction = null;
-
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            transaction = session.beginTransaction();
-
-            for (Steel steel : order.getSteelList()){
-                session.save(steel);
-            }
-
-            for (Bar bar : order.getBarList()){
-                session.save(bar);
-            }
-
-            session.save(order);
-
-            transaction.commit();
-
-
-        } catch (Exception e){
-            if (transaction != null){
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
 
     public Order getOrder(int id){
         Order order = null;
@@ -127,28 +99,6 @@ public class OrderDAO {
         return allOrderList;
     }
 
-    public void deleteById(int id){
-        Order order = null;
-        Transaction transaction = null;
-
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            transaction = session.beginTransaction();
-
-            order = new Order();
-            order.setId(id);
-            session.delete(order);
-
-
-            transaction.commit();
-
-
-        } catch (Exception e){
-            if (transaction != null){
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
 
     public List<Order> getOrdersWithNoRoute(){
         List<Order> orderList = null;
