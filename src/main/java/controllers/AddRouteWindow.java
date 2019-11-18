@@ -7,12 +7,10 @@ import entities.Route;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.*;
 import javafx.stage.Stage;
 
 
@@ -49,15 +47,13 @@ public class AddRouteWindow {
         allOrderList.setItems(allOrders);
         newRoute.setItems(routeOrderList);
 
-        allOrderList.setOnDragDetected(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
+        allOrderList.setOnDragDetected( event -> {
                 if (event.getSource() == allOrderList) {
                     int selectedIndex = allOrderList.getSelectionModel().getSelectedIndex();
                     tempOrder = allOrderList.getItems().get(selectedIndex);
                 }
             }
-        });
+        );
 
         newRoute.setOnMouseReleased( event -> {
                 if (event.getSource() == newRoute && tempOrder != null) {
@@ -71,7 +67,7 @@ public class AddRouteWindow {
     }
 
     private Route createRoute(){
-        Route route = null;
+        Route route;
         try {
             route = new Route();
             route.setTruck(truck.getText());
@@ -91,7 +87,7 @@ public class AddRouteWindow {
         }
 
 
-    public void gotowe(ActionEvent event){
+    public void ready(ActionEvent event){
         Route route = createRoute();
         if(route != null) {
             RouteDAO routeDAO = new RouteDAO();

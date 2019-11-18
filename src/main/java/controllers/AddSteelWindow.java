@@ -30,7 +30,7 @@ public class AddSteelWindow {
     private boolean edited = false;
     private int selectedIndex;
 
-    private Steel createStal(){
+    private Steel createSteel(){
         try{
             Steel steel = new Steel();
 
@@ -56,8 +56,8 @@ public class AddSteelWindow {
     }
 
 
-    public void gotowe(ActionEvent event){
-        Steel steel = createStal();
+    public void ready(ActionEvent event){
+        Steel steel = createSteel();
         if (steel != null){
             if(edited){
                 parentWindow.deleteItem(selectedIndex);
@@ -69,7 +69,7 @@ public class AddSteelWindow {
         }
     }
 
-    public void setStalToEdit(Steel steel, OrderAddWindow parentWindow, int selectedIndex){
+    public void setSteelToEdit(Steel steel, OrderAddWindow parentWindow, int selectedIndex){
         height.setText(String.valueOf(steel.getHeigh()));
         width.setText(String.valueOf(steel.getWidth()));
         thick.setText(String.valueOf(steel.getThick()));

@@ -73,7 +73,7 @@
          </BorderPane.margin>
          <children>
             <TextArea fx:id="addInfo" prefHeight="128.0" prefWidth="413.0" promptText="Dodatkowe uwagi" />
-            <Button mnemonicParsing="false" onAction="#gotowe" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #162e46;" text="Gotowe" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#ready" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #162e46;" text="Gotowe" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font></Button>

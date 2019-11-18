@@ -14,28 +14,6 @@ import java.util.List;
 
 public class OrderDAO {
 
-    public Order getOrder(int id){
-        Order order = null;
-        Transaction transaction = null;
-
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            transaction = session.beginTransaction();
-
-            order = session.get(Order.class, id);
-
-            transaction.commit();
-
-
-        } catch (Exception e){
-            if (transaction != null){
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-        return order;
-
-    }
-
     public void saveOrUpdateOrder(Order order){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){

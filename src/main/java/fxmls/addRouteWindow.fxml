@@ -88,7 +88,7 @@
             <Insets bottom="10.0" />
          </BorderPane.margin>
          <children>
-            <Button fx:id="ready" mnemonicParsing="false" onAction="#gotowe" style="-fx-background-color: #162e46;" text="Gotowe" textFill="WHITE">
+            <Button fx:id="ready" mnemonicParsing="false" onAction="#ready" style="-fx-background-color: #162e46;" text="Gotowe" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

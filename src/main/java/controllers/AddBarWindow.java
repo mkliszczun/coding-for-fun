@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class AddPretWindow {
+public class AddBarWindow {
 
     @FXML
     TextField d;
@@ -27,7 +27,7 @@ public class AddPretWindow {
     private OrderAddWindow parentWindow;
     private int selectedIndex;
 
-    private Bar createPret(){
+    private Bar createBar(){
         try {
             int diam = Integer.parseInt(d.getText());
             int cnt = Integer.parseInt(count.getText());
@@ -48,28 +48,26 @@ public class AddPretWindow {
 
         } catch (NumberFormatException e){
             System.out.println(e.getMessage());
-            System.out.println("at gotowe in AddPretWindow");
-
             return null;
         }
     }
 
 
 
-    public void gotowe(ActionEvent event){
-        Bar bar = createPret();
+    public void ready(ActionEvent event){
+        Bar bar = createBar();
         if (bar != null) {
             if (edited){
                 parentWindow.deleteItem(selectedIndex);
             }
-            parentWindow.addPretToList(bar);
+            parentWindow.addBarToList(bar);
             Stage appStage;
             appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.close();
         }
     }
 
-    public void setPretToEdit(Bar bar, OrderAddWindow parentWindow, int selectedIndex){
+    public void setBarToEdit(Bar bar, OrderAddWindow parentWindow, int selectedIndex){
         d.setText(String.valueOf(bar.getD()));
         count.setText(String.valueOf(bar.getCount()));
         length.setText(String.valueOf(bar.getLength()));

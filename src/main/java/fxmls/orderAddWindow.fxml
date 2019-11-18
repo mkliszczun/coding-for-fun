@@ -44,7 +44,7 @@
                <children>
                   <HBox alignment="BASELINE_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                      <children>
-                        <Button fx:id="zebroAdd" mnemonicParsing="false" onAction="#openAddPretWindow" text="+ Pręt żebrowany" />
+                        <Button fx:id="zebroAdd" mnemonicParsing="false" onAction="#openAddBarWindow" text="+ Pręt żebrowany" />
                         <Button fx:id="stalAdd" mnemonicParsing="false" onAction="#OpenAddSteelWindow" text="+ Stal" />
                         <Button fx:id="blachaAdd" mnemonicParsing="false" text="+ Blacha dachowa" />
                      </children>

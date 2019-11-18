@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.hibernate.SessionFactory;
 import util.HibernateUtil;
 
 import java.io.File;
@@ -32,7 +31,6 @@ public class MainMenu {
 
         appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         root = FXMLLoader.load(url);
-//        root = FXMLLoader.load(getClass().getResource(path));
         Scene scene = new Scene(root);
         appStage.setScene(scene);
         appStage.show();

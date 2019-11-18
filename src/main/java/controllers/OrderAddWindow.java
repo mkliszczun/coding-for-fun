@@ -97,12 +97,12 @@ public class OrderAddWindow {
         stage.show();
     }
 
-    public void openAddPretWindow() throws IOException {
-        URL url = new File("src/main/java/fxmls/addPretWindow.fxml").toURI().toURL();
+    public void openAddBarWindow() throws IOException {
+        URL url = new File("src/main/java/fxmls/addBarWindow.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         Parent root = loader.load();
-        AddPretWindow addPretWindow = loader.getController();
-        addPretWindow.setParentWindow(this);
+        AddBarWindow addBarWindow = loader.getController();
+        addBarWindow.setParentWindow(this);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
@@ -115,7 +115,7 @@ public class OrderAddWindow {
 
     }
 
-    public void addPretToList(Bar bar){
+    public void addBarToList(Bar bar){
         barList.add(bar);
         itemsForTable.add(bar);
     }
@@ -145,7 +145,6 @@ public class OrderAddWindow {
 
     public void editItems() throws IOException{
         int selectedIndex = orderTable.getSelectionModel().getSelectedIndex();
-        String path = null;
         if(selectedIndex >= 0)
             if (orderTable.getItems().get(selectedIndex).getClass() == Steel.class){
 
@@ -154,7 +153,7 @@ public class OrderAddWindow {
                 FXMLLoader loader = new FXMLLoader(url);
                 Parent root = loader.load();
                 AddSteelWindow addSteelWindow = loader.getController();
-                addSteelWindow.setStalToEdit(steel, this, selectedIndex);
+                addSteelWindow.setSteelToEdit(steel, this, selectedIndex);
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.show();
@@ -162,11 +161,11 @@ public class OrderAddWindow {
             } else if (orderTable.getItems().get(selectedIndex).getClass() == Bar.class){
 
                 Bar bar = (Bar) orderTable.getItems().get(selectedIndex);
-                URL url = new File("src/main/java/fxmls/addPretWindow.fxml").toURI().toURL();
+                URL url = new File("src/main/java/fxmls/addBarWindow.fxml").toURI().toURL();
                 FXMLLoader loader = new FXMLLoader(url);
                 Parent root = loader.load();
-                AddPretWindow addPretWindow = loader.getController();
-                addPretWindow.setPretToEdit(bar,this, selectedIndex);
+                AddBarWindow addBarWindow = loader.getController();
+                addBarWindow.setBarToEdit(bar,this, selectedIndex);
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
                 stage.show();

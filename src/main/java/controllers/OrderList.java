@@ -55,11 +55,8 @@ public class OrderList {
     private void populateAllOrderList(){
         OrderDAO orderDAO = new OrderDAO();
         List<Order> ordList = orderDAO.getAllOrders();
-        if(ordList != null) {
-            allOrderList.addAll(ordList);
-        } else {
-            System.out.println("shit, null List");
-        }
+        if(ordList != null) allOrderList.addAll(ordList);
+
         }
 
 
