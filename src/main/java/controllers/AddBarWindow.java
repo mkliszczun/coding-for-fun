@@ -13,13 +13,10 @@ public class AddBarWindow {
 
     @FXML
     TextField d;
-
     @FXML
     TextField count;
-
     @FXML
     TextField length;
-
     @FXML
     TextArea addInfo;
 
@@ -52,8 +49,6 @@ public class AddBarWindow {
         }
     }
 
-
-
     public void ready(ActionEvent event){
         Bar bar = createBar();
         if (bar != null) {
@@ -80,4 +75,5 @@ public class AddBarWindow {
     protected void setParentWindow(OrderAddWindow parentWindow){
         this.parentWindow = parentWindow;
     }
+
 }

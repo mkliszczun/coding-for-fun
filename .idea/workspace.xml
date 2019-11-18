@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa9ed2b3-c725-472d-b417-66af6a2d69f9" name="Default Changelist" comment="corrected names, Order toString() altered with adress">
+    <list default="true" id="aa9ed2b3-c725-472d-b417-66af6a2d69f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddPretWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBarWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddRouteWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddRouteWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddSteelWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddSteelWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/OrderAddWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/OrderAddWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/OrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/OrderList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/RouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxmls/addPretWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fxmls/addPretWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxmls/addRouteWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fxmls/addRouteWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxmls/addSteelWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fxmls/addSteelWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fxmls/orderAddWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fxmls/orderAddWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AddBarWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddBarWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
